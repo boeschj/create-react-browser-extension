@@ -78,6 +78,11 @@ module.exports = {
   appTsBuildInfoFile: resolveApp('node_modules/.cache/tsconfig.tsbuildinfo'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
   publicUrlOrPath,
+
+  //DEV: NEW FILE ADDITIONS TO TEMPLATE
+  background: resolveModule(resolveApp, 'src/Background/index'),
+  contentScript: resolveModule(resolveApp, 'src/ContentScript/index'),
+  appManifestJson: resolveApp('public/manifest.json'),
 };
 
 // @remove-on-eject-begin
@@ -108,6 +113,11 @@ module.exports = {
   ownNodeModules: resolveOwn('node_modules'), // This is empty on npm 3
   appTypeDeclarations: resolveApp('src/react-app-env.d.ts'),
   ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
+
+  //DEV: NEW FILE ADDITIONS TO TEMPLATE
+  background: resolveModule(resolveApp, 'src/Background/index'),
+  contentScript: resolveModule(resolveApp, 'src/ContentScript/index'),
+  appManifestJson: resolveApp('public/manifest.json'),
 };
 
 const ownPackageJson = require('../package.json');
@@ -146,6 +156,11 @@ if (
     ownNodeModules: resolveOwn('node_modules'),
     appTypeDeclarations: resolveOwn(`${templatePath}/src/react-app-env.d.ts`),
     ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
+
+    //DEV: NEW FILE ADDITIONS TO TEMPLATE
+    background: resolveOwn(`${templatePath}/src/Background/index`),
+    contentScript: resolveOwn(`${templatePath}/src/ContentScript/index`),
+    appManifestJson: resolveOwn(`${templatePath}/public/manifest.json`),
   };
 }
 // @remove-on-eject-end
